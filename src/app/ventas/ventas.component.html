@@ -1,0 +1,38 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Ventas</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Listado de ventas</h6>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/ventas/form']">Crear Ventas</button>
+      </div>
+      <table class="table table-boardered table-striped">
+        <thead>
+            <tr>
+                <th>NroVenta   </th>
+                <th>id_articulo  </th>
+                <th>Cantidad Vendida   </th>
+                <th>Nombre Vendedor </th>
+                <th>Editar    </th>
+                <th>Eliminar    </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let venta of ventas">
+                <td>{{venta.nroVenta}}</td>
+                <td>{{venta .id_articulo}}</td>
+                <td>{{venta .cantidadVendida}}</td>
+                <td>{{venta .nombreVendedor}}</td>
+                
+                <td>
+                  <button type="button" name="button" [routerLink]="['/ventas/form',venta.nroVenta]" class="btn btn-primary">Editar</button>
+                </td>
+                <td>
+                  <button type="button" name="button" (click)="eliminarVentas(venta.nroVenta)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>

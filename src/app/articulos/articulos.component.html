@@ -1,0 +1,40 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Llantas</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Listado de llanatas</h6>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/articulos/form']">Crear Llantas</button>
+      </div>
+      <table class="table table-boardered table-striped">
+        <thead>
+            <tr>
+                <th>Id    </th>
+                <th>Codigo de Llanta   </th>
+                <th>Categoria   </th>
+                <th>marca   </th>
+                <th>Stock    </th>
+                <th>Editar    </th>
+                <th>Eliminar    </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let articulo of articulos">
+                <td>{{articulo.id_articulo}}</td>
+                <td>{{articulo.codigo_llanta}}</td>
+                <td>{{articulo.categoria}}</td>
+                <td>{{articulo.marca}}</td>
+                <td>{{articulo.Stock}}</td>
+                
+                <td>
+                  <button type="button" name="button" [routerLink]="['/articulos/form',articulo.id_articulo]" class="btn btn-primary">Editar</button>
+                </td>
+                <td>
+                  <button type="button" name="button" (click)="eliminarArticulo(articulo.id_articulo)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>

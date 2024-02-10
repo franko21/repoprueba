@@ -1,0 +1,31 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Llantas</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Stock de llanatas</h6>
+
+      <table class="table table-boardered table-striped">
+        <thead>
+            <tr>
+                <th>Id    </th>
+                <th>Codigo de Llanta   </th>
+                <th>Categoria   </th>
+                <th>marca   </th>
+                <th>Stock    </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let articulo of articulos">
+                <td>{{articulo.id_articulo}}</td>
+                <td>{{articulo.codigo_llanta}}</td>
+                <td>{{articulo.categoria}}</td>
+                <td>{{articulo.marca}}</td>
+                <td>{{stockT(articulo.id_articulo)}}</td>
+                
+                
+            </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>

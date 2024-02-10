@@ -1,0 +1,34 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">Crear Articulo</div>
+    <div class="card-body">
+        <form ngNativeValidate (ngSubmit)="createArt()">
+            <div class="form-group row">
+                <label for="" class="col-form-label col-sm-2">Codigo LLanta</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]= "articulo.codigo_llanta" name="Codigo_llanta" required>
+                </div>
+            </div>
+           
+            <div class="form-group row">
+                <label for="" class="col-form-label col-sm-2">Categoria</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]= "articulo.categoria" name="Categoria" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-form-label col-sm-2">Marca</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]= "articulo.marca" name="marca" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button">Crear</button>
+                </div>
+            </div>  
+
+        </form>
+    </div>
+
+
+</div>

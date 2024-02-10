@@ -1,0 +1,38 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Compras</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Listado de compras</h6>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/compras/form']">Crear Compras</button>
+      </div>
+      <table class="table table-boardered table-striped">
+        <thead>
+            <tr>
+                <th>NroCompra   </th>
+                <th>id_articulo  </th>
+                <th>Cantidad Comprada   </th>
+                <th>Nombre Proveedor </th>
+                <th>Editar    </th>
+                <th>Eliminar    </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let compra of compras">
+                <td>{{compra.nroCompra}}</td>
+                <td>{{compra.id_articulo}}</td>
+                <td>{{compra.cantidadComprada}}</td>
+                <td>{{compra.nombreProveedor}}</td>
+                
+                <td>
+                  <button type="button" name="button" [routerLink]="['/compras/form',compra.nroCompra]" class="btn btn-primary">Editar</button>
+                </td>
+                <td>
+                  <button type="button" name="button" (click)="eliminarCompras(compra.nroCompra)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
